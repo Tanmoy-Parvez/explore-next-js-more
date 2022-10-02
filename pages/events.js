@@ -1,9 +1,15 @@
 
 const EventsList = ({ eventList }) => {
     console.log(eventList);
+
+    const handleFilterByCategory = async () => {
+        
+    }
+
     return (
-        <div>
+        <div className="text-center">
             <h1 className="text-3xl text-center text-white">You have {eventList.length} events to enjoy.</h1>
+            <button className="btn mt-5" onClick={handleFilterByCategory}>Filter by Sports Category</button>
             {
                 eventList.map(event => <div key={event.id}>
                     <div className="card w-96 bg-base-100 shadow-xl mt-5 mx-auto">
