@@ -3,7 +3,7 @@ const EventsList = ({ eventList }) => {
     console.log(eventList);
     return (
         <div>
-            <h1>This is event page</h1>
+            <h1 className="text-3xl text-center text-white">You have { eventList.length} events to enjoy.</h1>
         </div>
     );
 };
