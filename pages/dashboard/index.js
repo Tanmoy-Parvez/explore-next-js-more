@@ -15,7 +15,7 @@ const Dashboard = () => {
     }, [])
 
     if (isLoading) {
-        return <p>Loading........</p>
+        return <p className="text-3xl text-white text-center mt-64">Loading........</p>
     }
     
     return (
