@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useEffect, useState } from "react";
 
 const Dashboard = () => {
@@ -19,6 +20,9 @@ const Dashboard = () => {
     
     return (
         <div className="text-white text-center">
+            <Head>
+                <title>Next.JS-User/Dashboard</title>
+            </Head>
             <h1 className="text-2xl">User Dashboard</h1>
             <p>Total Users: {dashboardData.users}</p>
             <p>Total Posts: {dashboardData.posts}</p>
