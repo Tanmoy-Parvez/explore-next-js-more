@@ -1,3 +1,4 @@
+import Head from "next/head";
 import useSWR from "swr";
 
 const fetcher = async () => {
@@ -16,6 +17,9 @@ const DashboardSWR = () => {
 
     return (
         <div className="text-white text-center">
+            <Head>
+                <title>Next.JS-User/Dashboard</title>
+            </Head>
             <h1 className="text-2xl">User Dashboard</h1>
             <p>Total Users: {data.users}</p>
             <p>Total Posts: {data.posts}</p>
