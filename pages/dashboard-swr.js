@@ -15,8 +15,12 @@ const DashboardSWR = () => {
     if (!data) return "No data found"
 
     return (
-        <div>
-
+        <div className="text-white text-center">
+            <h1 className="text-2xl">User Dashboard</h1>
+            <p>Total Users: {data.users}</p>
+            <p>Total Posts: {data.posts}</p>
+            <p>Total Likes: {data.likes}</p>
+            <p>Total Comments: {data.comments}</p>
         </div>
     );
 };
