@@ -11,8 +11,7 @@ const DashboardSWR = () => {
     const { data, error } = useSWR('dashboard', fetcher);
     console.log(data);
 
-    if (error) return "Some error occurred"
-    if (!data) return "No data found"
+   
 
     return (
         <div>
