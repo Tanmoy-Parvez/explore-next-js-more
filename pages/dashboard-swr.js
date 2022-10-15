@@ -1,3 +1,4 @@
+import useSWR from "swr";
 
 const DashboardSWR = () => {
     return (
