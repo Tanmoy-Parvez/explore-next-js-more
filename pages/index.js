@@ -1,14 +1,10 @@
-import News from "../Components/News/News";
-import Blog from "./blog";
-import Header from "./header";
+import Header from "../components/Header/Header";
+
 
 const Home = () => {
   return (
     <div>
-      <h1>Hello</h1>
-      <Blog />
-      <Header />
-      <News/>
+      <Header/>
     </div>
   );
 };
