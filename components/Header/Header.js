@@ -8,7 +8,9 @@ const Header = () => {
             </div>
             <div className="flex-none">
                 <ul className="menu menu-horizontal p-0">
-                    <li><a>Blog</a></li>
+                    <li><Link href="/blog">
+                        <a>Blog</a>
+                    </Link></li>
                     <li tabIndex={0}>
                         <a>
                             Products
