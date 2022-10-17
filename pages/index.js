@@ -1,3 +1,4 @@
+import News from "../Components/News/News";
 import Blog from "./blog";
 import Header from "./header";
 
@@ -6,7 +7,8 @@ const Home = () => {
     <div>
       <h1>Hello</h1>
       <Blog />
-      <Header/>
+      <Header />
+      <News/>
     </div>
   );
 };
