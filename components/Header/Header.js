@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const Header = () => {
     return (
@@ -18,7 +19,11 @@ const Header = () => {
                             <li><a>Product 2</a></li>
                         </ul>
                     </li>
-                    <li><a>About</a></li>
+                    <li>
+                        <Link href="/about">
+                        <a>About</a>
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </div>
