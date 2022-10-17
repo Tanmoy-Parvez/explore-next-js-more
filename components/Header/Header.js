@@ -17,13 +17,22 @@ const Header = () => {
                             <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                         </a>
                         <ul className="p-2 bg-base-100">
-                            <li><a>Product 1</a></li>
-                            <li><a>Product 2</a></li>
+                            <li>
+                                <Link href="/products/1">
+                                    <a>Product-1</a>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/products/2">
+                                    <a>Product-2</a>
+                                </Link>
+                            </li>
+                            
                         </ul>
                     </li>
                     <li>
                         <Link href="/about">
-                        <a>About</a>
+                            <a>About</a>
                         </Link>
                     </li>
                 </ul>

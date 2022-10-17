@@ -14,6 +14,11 @@ const Blog = () => {
                     <Link href="/blog/sports">
                         <button className="btn btn-outline mr-2">Sports Blog</button>
                     </Link>
+                    <div className="mt-5">
+                        <Link href="/">
+                            <button className="btn btn-xs btn-outline">Back</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
