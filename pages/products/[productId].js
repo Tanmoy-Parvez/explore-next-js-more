@@ -1,12 +1,18 @@
 import { useRouter } from 'next/router';
 import Link from "next/link";
 import Header from "../../components/Header/Header";
+import Head from "next/head";
 
 const ProductId = () => {
     const router = useRouter();
     const productNo = router.query.productId;
     return (
         <>
+            <Head>
+                <title>
+                    Next.JS-Product-Details
+                </title>
+            </Head>
             <Header />
             <div className="card w-96 bg-base-100 shadow-xl mx-auto mt-24">
                 <figure>
