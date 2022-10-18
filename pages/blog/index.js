@@ -1,7 +1,14 @@
+import Head from "next/head";
 import Link from "next/link";
 
 const Blog = () => {
     return (
+        <>
+            <Head>
+                <title>
+                    Next.JS-Blog
+                </title>
+            </Head>
         <div className="hero min-h-screen" style={{ backgroundImage: `url("https://placeimg.com/1000/800/arch")` }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content text-white">
@@ -22,6 +29,7 @@ const Blog = () => {
                 </div>
             </div>
         </div>
+        </>
     );
 };
 
