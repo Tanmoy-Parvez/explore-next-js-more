@@ -1,8 +1,12 @@
+import Head from "next/head";
 import Link from "next/link";
 
 const PostList = ({posts}) => {
     return (
         <div>
+            <Head>
+                <title>Next.JS-Post</title>
+            </Head>
             {
                 posts.map(post => <div key={post.id} className="card text-white w-full my-5 bg-gray-500 shadow-xl">
                     <div className="card-body">
