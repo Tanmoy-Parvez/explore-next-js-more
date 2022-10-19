@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 const PostList = ({posts}) => {
     return (
@@ -7,9 +8,11 @@ const PostList = ({posts}) => {
                     <div className="card-body">
                         <p className="">Post Id: {post?.id}</p>
                         <h2 className="text-xl">{post?.title}</h2>
-                        <div className="card-actions justify-end">
-                            <button className="btn btn-outline">Details</button>
-                        </div>
+                        <Link href={`posts/${post?.id}`}>
+                            <div className="card-actions justify-end">
+                                <button className="btn btn-outline">Details</button>
+                            </div>
+                        </Link>
                     </div>
                 </div>)
             }
