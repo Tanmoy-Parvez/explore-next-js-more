@@ -18,8 +18,9 @@ const PostDetails = ({post}) => {
 
 export default PostDetails;
 
-export const getStaticProps = async () => {
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+export const getStaticProps = async (context) => {
+    const {params} = context;
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`);
     const data = await res.json();
     return {
         props: {
@@ -35,7 +36,17 @@ export const getStaticPaths = async () => {
                 params: {
                     postId: '1',
                 },
-            }
+            },
+            {
+                params: {
+                    postId: '2',
+                },
+            },
+            {
+                params: {
+                    postId: '3',
+                },
+            },
         ],
         fallback: false,
     }
