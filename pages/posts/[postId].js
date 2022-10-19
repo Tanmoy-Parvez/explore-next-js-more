@@ -1,7 +1,11 @@
+import Head from "next/head";
 
 const PostDetails = ({post}) => {
     return (
         <div>
+            <Head>
+                <title>Next.JS-Post_Details-{post.id}</title>
+            </Head>
             <div className="card text-white w-full my-5 bg-gray-500 shadow-xl">
                 <div className="card-body">
                     <p className="">Post Id: {post?.id}</p>
