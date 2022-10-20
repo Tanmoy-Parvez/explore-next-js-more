@@ -11,9 +11,21 @@ const CommentDetails = ({ comment }) => {
 
 export default CommentDetails;
 
-export const getStaticProps = async (context) => {
-    const { params } = context;
-    const res = await fetch(`https://jsonplaceholder.typicode.com/comments/${params.commentId}`);
+export const getStaticPaths = () => { 
+    return {
+        paths: [
+            {
+                params: {
+                    commentId: "1"
+                },
+            }
+        ],
+        fallback: false,
+    }
+}
+
+export const getStaticProps = async () => { 
+    const res = await fetch("https://jsonplaceholder.typicode.com/comments/1");
     const data = await res.json();
     console.log(data);
     return {
@@ -22,28 +34,3 @@ export const getStaticProps = async (context) => {
         }
     }
 }
-
-export const getStaticPaths = () => { 
-    return {
-        paths: [
-            {
-                params: {
-                    commentId: "1"
-                }
-            },
-            {
-                params: {
-                    commentId: "2"
-                }
-            },
-            {
-                params: {
-                    commentId: "3"
-                }
-            },
-        ],
-        fallback: false,
-    }
-}
-
-
