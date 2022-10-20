@@ -1,7 +1,14 @@
+import Head from "next/head";
 
 const CommentDetails = ({ comment }) => {
     
     return (
+        <>
+          <Head>
+                <title>
+                    Next.JS-Comments-{ comment?.id}
+                </title>
+            </Head>
         <div className="flex justify-center mt-20">
             <div className="card w-3/5 bg-base-100 shadow-xl image-full">
                 <figure><img className="w-full" src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
@@ -11,7 +18,8 @@ const CommentDetails = ({ comment }) => {
                     <h3>{comment?.email}</h3>
                 </div>
             </div>
-        </div>
+            </div>
+        </>
     );
 };
 
