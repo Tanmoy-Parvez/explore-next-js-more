@@ -1,5 +1,6 @@
 
-const CommentsList = () => {
+const CommentsList = ({ comments }) => {
+    console.log(comments);
     return (
         <div className="grid grid-cols-3 gap-4 mx-auto container mt-5">
             <div className="card card-compact w-96 bg-base-100 shadow-xl">
@@ -46,3 +47,13 @@ const CommentsList = () => {
 
 export default CommentsList;
 
+export const getStaticProps = async() => {
+    const res = await fetch("https://jsonplaceholder.typicode.com/comments?_limit=100");
+    const data = await res.json();
+
+    return {
+        props: {
+            comments: data,
+        }
+    }
+}
