@@ -30,7 +30,7 @@ export const getStaticProps = async() => {
 
     return {
         props: {
-            comments: data,
+            comments: data.slice(0,3),
         }
     }
 }
