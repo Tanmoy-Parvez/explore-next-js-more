@@ -1,10 +1,16 @@
 
 const CommentDetails = ({ comment }) => {
-    console.log(comment);
+    
     return (
-        <div>
-            <h1>This is details page</h1>
-            
+        <div className="flex justify-center mt-20">
+            <div className="card w-3/5 bg-base-100 shadow-xl image-full">
+                <figure><img className="w-full" src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                <div className="card-body text-center mt-20">
+                    <h2 className="card-title">{comment?.body}</h2>
+                    <h3>{comment?.name}</h3>
+                    <h3>{comment?.email}</h3>
+                </div>
+            </div>
         </div>
     );
 };
