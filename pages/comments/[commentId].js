@@ -26,27 +26,43 @@ const CommentDetails = ({ comment }) => {
 export default CommentDetails;
 
 export const getStaticPaths = async() => { 
-    const res = await fetch("https://jsonplaceholder.typicode.com/comments?_limit=15");
+    const res = await fetch("https://jsonplaceholder.typicode.com/comments?_limit=6");
     const data = await res.json();
 
-    const paths = data.map(comment => {
-        return {
-            params: {
-                commentId: `${comment.id}`,
-            }
-        }
-    })
+    // const paths = data.map(comment => {
+    //     return {
+    //         params: {
+    //             commentId: `${comment.id}`,
+    //         }
+    //     }
+    // })
+
     return {
-        paths,
-        fallback: false,
+        paths: [
+            {
+                params: {
+                    commentId: "1"
+                }
+            },
+            {
+                params: {
+                    commentId: "2"
+                }
+            },
+            {
+                params: {
+                    commentId: "3"
+                }
+            }
+        ],
+        fallback: true,
     }
 }
 
-export const getStaticProps = async (id) => { 
-    const { params } = id;
+export const getStaticProps = async (context) => { 
+    const { params } = context;
     const res = await fetch(`https://jsonplaceholder.typicode.com/comments/${params.commentId}`);
     const data = await res.json();
-    console.log(data);
     return {
         props: {
             comment: data,
