@@ -1,6 +1,12 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const CommentDetails = ({ comment }) => {
+    const router = useRouter();
+
+    if (router.isFallback) { 
+        return <h1>Loading.......</h1>
+    }
     
     return (
         <>
