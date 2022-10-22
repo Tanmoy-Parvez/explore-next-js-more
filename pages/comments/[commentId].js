@@ -2,11 +2,13 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 const CommentDetails = ({ comment }) => {
-    const router = useRouter();
 
-    if (router.isFallback) { 
-        return <h1>Loading.......</h1>
-    }
+    // for fallback true
+    // const router = useRouter();
+
+    // if (router.isFallback) { 
+    //     return <h1>Loading.......</h1>
+    // }
     
     return (
         <>
@@ -61,7 +63,7 @@ export const getStaticPaths = async() => {
                 }
             }
         ],
-        fallback: true,
+        fallback: "blocking",
     }
 }
 
