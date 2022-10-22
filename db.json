@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Watch",
+      "price": 199
+    },
+    {
+      "id": 2,
+      "name": "Laptop",
+      "price": 999
+    },
+    {
+      "id": 3,
+      "name": "Mobile",
+      "price": 599
+    }
+  ]
+}
