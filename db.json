@@ -2,18 +2,21 @@
   "news": [
     {
       "id": 1,
-      "title": "Sports",
-      "description": "This news is about Sports"
+      "title": "News Article-1",
+      "description": "This news is about Sports",
+      "category": "sports"
     },
     {
       "id": 2,
-      "title": "Movies",
-      "description": "This news is about Movies"
+      "title": "News Article-2",
+      "description": "This news is about Politics",
+      "category": "politics"
     },
     {
       "id": 3,
-      "title": "Politics",
-      "description": "This news is about Politics"
+      "title": "News Article-3",
+      "description": "This news is about Sports",
+      "category": "sports"
     }
   ],
   "products": [
