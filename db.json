@@ -1,4 +1,21 @@
 {
+  "news": [
+    {
+      "id": 1,
+      "title": "Sports",
+      "description": "This news is about Sports"
+    },
+    {
+      "id": 2,
+      "title": "Movies",
+      "description": "This news is about Movies"
+    },
+    {
+      "id": 3,
+      "title": "Politics",
+      "description": "This news is about Politics"
+    }
+  ],
   "products": [
     {
       "id": 1,
