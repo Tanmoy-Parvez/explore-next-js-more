@@ -1,8 +1,11 @@
 
-const NewsList = () => {
+const NewsList = ({newses}) => {
     return (
         <div>
-            
+            <h1>All update news are here</h1>
+            {
+                newses.map(news => <h3 key={news.id}>{news.id}. {news.title}</h3>)
+            }
         </div>
     );
 };
@@ -15,7 +18,7 @@ export const getServerSideProps = async () => {
     console.log(data);
     return {
         props: {
-            
+           newses: data, 
         }
     }
 }
