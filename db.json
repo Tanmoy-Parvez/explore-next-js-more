@@ -2,19 +2,19 @@
   "news": [
     {
       "id": 1,
-      "title": "News Article-1",
+      "title": "News Article-11",
       "description": "This news is about Sports",
       "category": "sports"
     },
     {
       "id": 2,
-      "title": "News Article-2",
+      "title": "News Article-12",
       "description": "This news is about Politics",
       "category": "politics"
     },
     {
       "id": 3,
-      "title": "News Article-3",
+      "title": "News Article-13",
       "description": "This news is about Sports",
       "category": "sports"
     }
