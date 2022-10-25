@@ -1,4 +1,11 @@
 {
+"dashboard": {
+  "posts": 100,
+  "likes": 500,
+  "comments": 250,
+  "users": 1000
+},
+
   "news": [
     {
       "id": 1,
