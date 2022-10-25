@@ -1,8 +1,29 @@
+import { useEffect, useState } from "react";
 
 const Dashboard = () => {
+    const [isLoading, setIsLoading] = useState(true);
+    const [dashboardData, setDashboardData] = useState(null);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/dashboard')
+            .then(res => res.json())
+            .then(data => {
+                setDashboardData(data);
+                setIsLoading(false);
+        })
+    }, [])
+
+    if (isLoading) {
+        return <p>Loading........</p>
+    }
+    
     return (
-        <div>
-            
+        <div className="text-white text-center">
+            <h1 className="text-2xl">User Dashboard</h1>
+            <p>Total Users: {dashboardData.users}</p>
+            <p>Total Posts: {dashboardData.posts}</p>
+            <p>Total Likes: {dashboardData.likes}</p>
+            <p>Total Comments: {dashboardData.comments}</p>
         </div>
     );
 };
