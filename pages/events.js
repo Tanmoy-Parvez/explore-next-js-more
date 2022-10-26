@@ -1,9 +1,15 @@
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 const EventsList = ({ eventList }) => {
-    console.log(eventList);
+    const [events, setEvents] = useState(eventList)
+    const router = useRouter();
 
     const handleFilterByCategory = async () => {
-        
+        const res = await fetch(`http://localhost:5000/events?category=sports`);
+        const data = await res.json();
+        setEvents(data)
+        router.push("/events?category=sports", undefined, {shallow: true} )
     }
 
     return (
@@ -11,7 +17,7 @@ const EventsList = ({ eventList }) => {
             <h1 className="text-3xl text-center text-white">You have {eventList.length} events to enjoy.</h1>
             <button className="btn mt-5" onClick={handleFilterByCategory}>Filter by Sports Category</button>
             {
-                eventList.map(event => <div key={event.id}>
+                events.map(event => <div key={event.id}>
                     <div className="card w-96 bg-base-100 shadow-xl mt-5 mx-auto">
                         <div className="card-body">
                             <div className="card-actions justify-end">
@@ -33,9 +39,13 @@ const EventsList = ({ eventList }) => {
 
 export default EventsList;
 
-export const getServerSideProps = async () => { 
+export const getServerSideProps = async (context) => { 
+    const { query } = context;
+    const { category } = query;
+    
+    const queryStr = category ? "category=" + category : "";
 
-    const res = await fetch(`http://localhost:5000/events`);
+    const res = await fetch(`http://localhost:5000/events?${queryStr}`);
     const data = await res.json();
     return {
         props: {
