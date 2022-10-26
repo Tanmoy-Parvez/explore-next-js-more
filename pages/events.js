@@ -5,17 +5,18 @@ const EventsList = ({ eventList }) => {
     const [events, setEvents] = useState(eventList)
     const router = useRouter();
 
-    const handleFilterByCategory = async () => {
-        const res = await fetch(`http://localhost:5000/events?category=sports`);
+    const handleFilterByCategory = async (categoryName) => {
+        // console.log(categoryName);
+        const res = await fetch(`http://localhost:5000/events?category=${categoryName}`);
         const data = await res.json();
         setEvents(data)
-        router.push("/events?category=sports", undefined, {shallow: true} )
+        router.push(`/events?category=${categoryName}`, undefined, {shallow: true} )
     }
 
     return (
         <div className="text-center">
-            <h1 className="text-3xl text-center text-white">You have {eventList.length} events to enjoy.</h1>
-            <button className="btn mt-5" onClick={handleFilterByCategory}>Filter by Sports Category</button>
+            <h1 className="text-3xl text-center text-white">You have {events.length} events to enjoy.</h1>
+            <button className="btn mt-5" onClick={() => handleFilterByCategory("sports") }>Filter by Sports Category</button>
             {
                 events.map(event => <div key={event.id}>
                     <div className="card w-96 bg-base-100 shadow-xl mt-5 mx-auto">
